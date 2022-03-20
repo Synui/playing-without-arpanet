@@ -10,7 +10,7 @@
 
 ## Description
 
-This application allows you to keep track of their money transactions. You can add or subtract transactions by inputting a name and amount that then gets added to a table. There is no functionality to delete said transactions so be mindful of what you add or subtract. As more and more transactions get added the line graph will keep track of your progress from transaction to transaction and day to day.
+This application allows you to keep track of your money transactions. You can add or subtract transactions by inputting a name and amount that then gets added to a table. There is no functionality to delete said transactions so be mindful of what you add or subtract. As more and more transactions get added the line graph will keep track of your progress from transaction to transaction and day to day.
 
 ## Installation
 
