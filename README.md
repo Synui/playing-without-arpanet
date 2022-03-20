@@ -1,13 +1,40 @@
 # playing-without-arpanet
 
-AS AN avid traveler
-I WANT to be able to track my withdrawals and deposits with or without a data/internet connection
-SO THAT my account balance is accurate when I am traveling 
+## Table of Contents
 
-GIVEN a budget tracker without an internet connection
+- [Description](#description)
+- [Installation](#installation)
+- [Technologies](#technologies)
+- [My Contribution](#my-contribution)
+- [Image](#image)
 
-x  WHEN the user inputs an expense or deposit
-THEN they will receive a notification that they have added an expense or deposit
+## Description
 
-  WHEN the user reestablishes an internet connection
-THEN the deposits or expenses added while they were offline are added to their transaction history and their totals are updated
+This application allows you to keep track of their money transactions. You can add or subtract transactions by inputting a name and amount that then gets added to a table. There is no functionality to delete said transactions so be mindful of what you add or subtract. As more and more transactions get added the line graph will keep track of your progress from transaction to transaction and day to day.
+
+## Installation
+
+Deployable website: https://playing-without-arpanet.herokuapp.com/
+
+## Technologies
+
+- Express
+- Mongoose
+- NoSQL
+- Morgan
+- Compression
+- MongoDB
+- IndexedDB
+- Web manifest
+
+## My Contribution
+
+The application itself was was a starter code provided to me. My job was to:
+- add offline functionality so that transactions can be updated automatically once internet becomes available
+- add service workers and caches in conjunction with offline functionality
+- add a web manifest that allows the user to add the app to their home screen of their phone
+
+## Image
+
+![Image](/assets/preview.PNG)
+
