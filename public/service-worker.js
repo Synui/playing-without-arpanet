@@ -3,6 +3,7 @@ const VERSION = 'version_01';
 const CACHE_NAME = APP_PREFIX + VERSION;
 const FILES_TO_CACHE = [
     "./index.html",
+    "./manifest.json",
     "./js/idb.js",
     "./js/index.js",
     "./css/styles.css",
@@ -40,7 +41,6 @@ self.addEventListener('activate', function (e) {
 
                 cacheKeeplist.push(CACHE_NAME);
 
-                // returns a Promise that resolves once all old versions of the cache have been deleted.
                 return Promise.all(
                     keyList.map(function (key, i) {
                         if (cacheKeeplist.indexOf(key) === -1) {
@@ -57,18 +57,17 @@ self.addEventListener('activate', function (e) {
 self.addEventListener('fetch', function (e) {
     console.log('fetch request : ' + e.request.url)
     e.respondWith(
+        caches
         // we use .match() to determine if the resource already exists in caches
-        caches.match(e.request).then(function (request) {
-            if (request) { // if it does, we'll log the URL to the console with a message and then return the cached resource
-                console.log('responding with cache : ' + e.request.url)
-                return request
-            } else { // if the resource is not in caches, we allow the resource to be retrieved from the online network as usual 
-                console.log('file is not cached, fetching : ' + e.request.url)
-                return fetch(e.request)
-            }
-
-            // You can omit if/else for console.log & put one line below like this too.
-            // return request || fetch(e.request)
-        })
+            .match(e.request)
+            .then(function (request) {
+                if (request) {
+                    console.log('responding with cache : ' + e.request.url)
+                    return request
+                } else {
+                    console.log('file is not cached, fetching : ' + e.request.url)
+                    return fetch(e.request)
+                }
+            })
     )
 });
