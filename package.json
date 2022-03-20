@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/Synui/playing-without-arpanet/issues"
   },
-  "homepage": "https://github.com/Synui/playing-without-arpanet#readme",
+  "homepage": "https://github.com/Synui/playing-without-arpanet",
   "dependencies": {
     "compression": "^1.7.4",
     "express": "^4.17.1",
